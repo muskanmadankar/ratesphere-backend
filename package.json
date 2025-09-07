@@ -1,0 +1,13 @@
+{
+  "name": "roxiler-project : ratesphere-dashboard",
+  "version": "1.0.0",
+  "description": "A store rating platform with role-based access and analytics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Muskan",
+  "license": "ISC",
+  "type": "commonjs"
+}
