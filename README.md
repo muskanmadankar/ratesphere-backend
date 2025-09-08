@@ -121,6 +121,15 @@ RateSphere is a full-stack web application that enables users to rate local stor
 Live Demo: [https://ratesphere-backened.onrender.com](https://ratesphere-backened.onrender.com)
 
 ---
+##  Live Backend
+
+The backend is deployed on Railway and available at:
+
+🔗 [https://ratesphere-backend-production.up.railway.app](https://ratesphere-backend-production.up.railway.app)
+
+You can test API endpoints like `/api/auth/login` or `/api/auth/register` using Postman or the connected frontend.
+
+---
 
 ## Test Credentials
 
