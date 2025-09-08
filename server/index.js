@@ -47,14 +47,7 @@ app.use("/api/stores", authenticateJWT, storeRoutes);
 app.use("/api/ratings", authenticateJWT, ratingRoutes);
 app.use("/api/dashboard", authenticateJWT, dashboardRoutes);
 
-// Serve static assets in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client", "dist")));
 
-  app.get(/^\/(?!api).*/, (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-  });
-}
 // Start the server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
