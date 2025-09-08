@@ -75,11 +75,12 @@ RateSphere is a full-stack web application that enables users to rate local stor
 - ![Add User Form](./images/AddUser.png)
 - ![User List](./images/User-List.png)
 - ![Search & Filter](./images/Filter1.png)
-- ![Sorting](./images/SortbyNameAdded.png)
+- ![Sorting](./images/SortbyNameAdds.png)
 - ![User Details](./images/ratingsbyUser.png)
+- ![Admin Section](./images/adminSection.png)
 
 ### Normal User
-- ![Normal User Dashboard](./images/NormalUserDashboard.png)
+- ![Normal User Dashboard](./images/userSection.png)
 - ![Store Search](./images/search.png)
 - ![Ratings Panel](./images/editRatingbyUser.png)
 - ![Login Form](./images/login.png)
@@ -88,6 +89,7 @@ RateSphere is a full-stack web application that enables users to rate local stor
 ### Store Owner
 - ![Store Owner Dashboard](./images/Store-List.png)
 - ![User Ratings](./images/AvgRating.png)
+- ![owner section](./images/ownerSection.png)
 
 ### Other UI Elements
 - ![Profile Page](./images/Profile.png)
