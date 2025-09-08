@@ -319,13 +319,34 @@ router.post(
 
       const { password: _, ...userWithoutPassword } = user.toObject();
 
-      res.json({ success: true, token, user: userWithoutPassword });
+     res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,           // required for HTTPS
+  sameSite: "None",       // required for cross-origin cookies
+  maxAge: 24 * 60 * 60 * 1000 // optional: 1 day
+});
+
+res.json({ success: true, user: userWithoutPassword });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ message: "Server error" });
     }
   }
 );
+
+/**
+ * @route   POST /api/auth/logout
+ * @desc    Logout user by clearing cookie
+ * @access  Public
+ */
+router.post("/logout", (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "None"
+  });
+  res.json({ message: "Logged out" });
+});
 
 /**
  * @route   POST /api/auth/register
