@@ -32,7 +32,5 @@ const userSchema = new mongoose.Schema({
   toObject: { virtuals: true }
 });
 
-// Index for faster email lookups
-userSchema.index({ email: 1 });
 
 export default mongoose.model('User', userSchema);
