@@ -34,11 +34,26 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/store_ratin
     process.exit(1);
   });
 
+// CORS Configuration for cross-origin requests
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://bright-brioche-d3290d.netlify.app" // your deployed frontend
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Health check route
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
 
 // API Routes
 app.use("/api/auth", authRoutes);
@@ -46,7 +61,6 @@ app.use("/api/users", authenticateJWT, userRoutes);
 app.use("/api/stores", authenticateJWT, storeRoutes);
 app.use("/api/ratings", authenticateJWT, ratingRoutes);
 app.use("/api/dashboard", authenticateJWT, dashboardRoutes);
-
 
 // Start the server
 app.listen(PORT, () => {
