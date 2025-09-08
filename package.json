@@ -1,5 +1,5 @@
 {
-  "name": "roxiler-project : ratesphere-dashboard",
+"name": "roxiler-project-ratesphere-dashboard",
   "version": "1.0.0",
   "description": "A store rating platform with role-based access and analytics",
   "main": "index.js",
