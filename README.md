@@ -114,11 +114,6 @@ RateSphere is a full-stack web application that enables users to rate local stor
 - Environment Variables: Managed via `.env` and `.env.example`  
 - Frontend Served from Backend: `client/dist` integrated into Express
 
----
-
-## Live Demo
-
-Live Demo: [https://ratesphere-backened.onrender.com](https://ratesphere-backened.onrender.com)
 
 ---
 ##  Live Backend
@@ -138,8 +133,8 @@ You can test API endpoints like `/api/auth/login` or `/api/auth/register` using 
 - Password: AdminPass123!
 
 ### Normal User  
-- Email: Muskan@gmail.com
-- Password: Muskan@123
+- Email: madankarmuskan@gmail.com
+- Password: Muskan@1234
 
 ### Store Owner  
 - Email: fancy@gmail.com 
