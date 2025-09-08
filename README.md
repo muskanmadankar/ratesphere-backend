@@ -114,8 +114,13 @@ RateSphere is a full-stack web application that enables users to rate local stor
 - Environment Variables: Managed via `.env` and `.env.example`  
 - Frontend Served from Backend: `client/dist` integrated into Express
 
+---
+
+## Live Demo
+Check out the deployed site here: [bright-brioche-d3290d.netlify.app](https://bright-brioche-d3290d.netlify.app)
 
 ---
+
 ##  Live Backend
 
 The backend is deployed on Railway and available at:
