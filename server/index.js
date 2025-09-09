@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/store_ratin
 // CORS Configuration for cross-origin requests
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://bright-brioche-d3290d.netlify.app" // your deployed frontend
+  "https://afterstore.netlify.app"
 ];
 
 app.use(cors({
