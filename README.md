@@ -109,7 +109,7 @@ RateSphere is a full-stack web application that enables users to rate local stor
 
 ## Setup Instructions
 
-This project is already deployed.  
+  
 To run locally:
 
 1. Clone the repository
