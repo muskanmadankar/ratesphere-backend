@@ -297,7 +297,7 @@ router.post(
     }
 
     let { email, password } = req.body;
-    email = email.toLowerCase().trim(); // ✅ Normalize email
+    email = email.toLowerCase().trim(); 
 
     try {
       const user = await User.findOne({ email });
@@ -318,12 +318,11 @@ router.post(
       });
 
       const { password: _, ...userWithoutPassword } = user.toObject();
-
-     res.cookie("token", token, {
+res.cookie("token", token, {
   httpOnly: true,
-  secure: true,           // required for HTTPS
-  sameSite: "None",       // required for cross-origin cookies
-  maxAge: 24 * 60 * 60 * 1000 // optional: 1 day
+  secure: process.env.NODE_ENV === "production", // ✅ HTTPS only in production
+  sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ Lax for localhost
+  maxAge: 24 * 60 * 60 * 1000
 });
 
 res.json({ success: true, user: userWithoutPassword });

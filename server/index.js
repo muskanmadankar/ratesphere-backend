@@ -36,12 +36,19 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/store_ratin
 
 // CORS Configuration for cross-origin requests
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://afterstore.netlify.app"
+  "http://localhost:5173", // for local testing
+  "https://bright-brioche-d3290ed.netlify.app", // your deployed frontend
+  "https://register-frontend-dusky.vercel.app"  // if you're testing on Vercel
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
