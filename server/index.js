@@ -117,7 +117,8 @@ const allowedOrigins = [
   "http://localhost:5176", // for local testing (your current port)
   "http://localhost:5184", // for local testing (alternative port)
   "http://localhost:3000", // for local testing (alternative)
-  "https://bright-brioche-d3290ed.netlify.app", // deployed frontend
+  // "https://bright-brioche-d3290ed.netlify.app", // deployed frontend
+  "https://bright-brioche-d3290d.netlify.app/",
   "https://register-frontend-dusky.vercel.app"  // optional Vercel test
 ];
 
