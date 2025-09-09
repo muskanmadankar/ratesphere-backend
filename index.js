@@ -20,7 +20,9 @@ import { authenticateJWT } from "./middleware/auth.js";
 dotenv.config();
 console.log("MONGO_URI:", process.env.MONGO_URI);
 const app = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
+
 
 // Calculate dirname equivalent in ESM
 const __filename = fileURLToPath(import.meta.url);

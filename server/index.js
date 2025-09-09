@@ -113,7 +113,10 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/store_ratin
 
 // CORS Configuration for cross-origin requests
 const allowedOrigins = [
-  "http://localhost:5173", // for local testing
+  "http://localhost:5173", // for local testing (Vite default)
+  "http://localhost:5176", // for local testing (your current port)
+  "http://localhost:5184", // for local testing (alternative port)
+  "http://localhost:3000", // for local testing (alternative)
   "https://bright-brioche-d3290ed.netlify.app", // deployed frontend
   "https://register-frontend-dusky.vercel.app"  // optional Vercel test
 ];
