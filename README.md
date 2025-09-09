@@ -107,46 +107,6 @@ RateSphere is a full-stack web application that enables users to rate local stor
 
 ---
 
-## Deployment
-
-- Platform: Render  
-- Build Tool: Vite  
-- Environment Variables: Managed via `.env` and `.env.example`  
-- Frontend Served from Backend: `client/dist` integrated into Express
-
----
-
-## Live Demo
-Check out the deployed site here: [bright-brioche-d3290d.netlify.app](https://bright-brioche-d3290d.netlify.app)
-
----
-
-##  Live Backend
-
-The backend is deployed on Railway and available at:
-
-🔗 [https://ratesphere-backend-production.up.railway.app](https://ratesphere-backend-production.up.railway.app)
-
-You can test API endpoints like `/api/auth/login` or `/api/auth/register` using Postman or the connected frontend.
-
----
-
-## Test Credentials
-
-### Admin  
-- Email: admin@store.com  
-- Password: AdminPass123!
-
-### Normal User  
-- Email: madankarmuskan@gmail.com
-- Password: Muskan@1234
-
-### Store Owner  
-- Email: fancy@gmail.com 
-- Password: Fancy@1234
-
----
-
 ## Setup Instructions
 
 This project is already deployed.  

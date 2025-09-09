@@ -8,7 +8,7 @@ const StoreDashboard = () => {
   const token = localStorage.getItem('token'); // or use context if you have it
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/ratings/store-owner', {
+    fetch('http://localhost:3000/api/ratings/store-owner', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

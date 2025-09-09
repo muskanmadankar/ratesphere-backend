@@ -23,31 +23,14 @@ router.get('/', async (req, res) => {
     const stores = await query.sort({ createdAt: -1 }).lean();
 
     // Attach avg ratings dynamically
-    // const storesWithRatings = await Promise.all(stores.map(async (s) => {
-    //   const ratings = await Rating.find({ store_id: s._id });
-    //   const avgRating = ratings.length
-    //     ? ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length
-    //     : 0;
-    //   return { ...s, avgRating };
-    // }));
-
     const storesWithRatings = await Promise.all(stores.map(async (s) => {
-  const ratings = await Rating.find({ store_id: s._id });
+      const ratings = await Rating.find({ store_id: s._id });
+      const avgRating = ratings.length
+        ? ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length
+        : 0;
+      return { ...s, avgRating };
+    }));
 
-  const avgRating = ratings.length
-    ? ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length
-    : 0;
-
-  // NEW: Find current user's rating for this store
-  const userRatingDoc = await Rating.findOne({
-    store_id: s._id,
-    user_id: req.user?._id, // assuming JWT middleware sets req.user
-  });
-
-  const userRating = userRatingDoc?.rating || 0;
-
-  return { ...s, avgRating, userRating };
-}));
     res.json(storesWithRatings);
   } catch (error) {
     console.error('Get stores error:', error);

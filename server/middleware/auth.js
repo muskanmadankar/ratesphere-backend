@@ -25,15 +25,8 @@ export const authenticateJWT = (req, res, next) => {
 };
 
 // ✅ Check if user is an admin
-// export const isAdmin = (req, res, next) => {
-//   if (req.user && req.user.role === "admin") {
-//     next();
-//   } else {
-//     res.status(403).json({ message: "Access denied. Admin role required." });
-//   }
-// };
 export const isAdmin = (req, res, next) => {
-  if (req.user && req.user.role.toLowerCase() === "admin") {
+  if (req.user && req.user.role === "admin") {
     next();
   } else {
     res.status(403).json({ message: "Access denied. Admin role required." });
